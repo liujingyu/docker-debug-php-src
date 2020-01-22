@@ -22,6 +22,8 @@ sh cmd enter
 step5:
 
 浏览器输入:http://localhost:5000 进行debug
+
+[更多介绍gdbgui](https://github.com/cs01/gdbgui)
 ```
 
 ## 容器
