@@ -11,7 +11,7 @@ docker build -t liujingyu/php-src .
 ### 启动容器
 
 ```
-docker run  -it --cap-add=SYS_PTRACE --security-opt seccomp:unconfined -p 5000:5000 -v .:/root/work liujingyu/php-src bash
+docker run  -it --cap-add=SYS_PTRACE --security-opt seccomp:unconfined -p 5000:5000 -v $(pwd):/root/work liujingyu/php-src bash
 ```
 
 ### web 界面gdb（gdbgui）
