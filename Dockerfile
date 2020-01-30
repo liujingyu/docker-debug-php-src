@@ -8,7 +8,9 @@ RUN debuginfo-install -y keyutils-libs-1.5.8-3.el7.x86_64 krb5-libs-1.15.1-37.el
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && pip install gdbgui
 
-RUN mkdir -p /root/bin && curl https://beyondgrep.com/ack-2.22-single-file > ~/bin/ack && chmod 0755 ~/bin/ack && export PATH=$PATH:/root/bin && yum -y install http://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/c/cgdb-0.6.8-1.el7.x86_64.rpm
+RUN mkdir -p /root/bin && curl https://beyondgrep.com/ack-2.22-single-file > ~/bin/ack && chmod 0755 ~/bin/ack 
+RUN echo "export PATH=$PATH:/root/bin"  >> ~/.bashrc
+RUN yum -y install http://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/c/cgdb-0.6.8-1.el7.x86_64.rpm
 
 COPY php-src /usr/local/src/php-src
 
