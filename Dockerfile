@@ -14,7 +14,7 @@ RUN yum -y install http://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Pack
 
 COPY php-src /usr/local/src/php-src
 
-RUN cd /usr/local/src/php-src && git checkout PHP-7.1 && ./buildconf  && ./configure --with-openssl --enable-debug --prefix=$HOME/myphp  CFLAGS="-g3 -gdwarf-4" && make && make install
+RUN cd /usr/local/src/php-src && git checkout PHP-7.1 && ./buildconf  && ./configure  --enable-sockets --with-openssl --enable-debug --prefix=$HOME/myphp  CFLAGS="-g3 -gdwarf-4" && make && make install
 
 RUN echo "export PATH=$PATH:/root/myphp/bin" >> ~/.bashrc && echo "source /usr/local/src/php-src/.gdbinit" >> ~/.gdbinit
 
