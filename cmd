@@ -26,5 +26,5 @@ elif [ $action = "up" ]; then
 elif [ $action = "down" ]; then
     docker-compose down
 elif [ $action = "gdbgui" ]; then
-    docker-compose exec php-src sh -c "gdbgui --host 0.0.0.0 --port 5000"
+    docker-compose exec php-src sh -c "gdbgui --host 0.0.0.0 --port 5001"
 fi
